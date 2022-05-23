@@ -1,0 +1,306 @@
+#include <stdio.h>
+
+void plantilla(char A[3][3],int p){
+   
+    for (int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            p++;
+            A[i][j]= p+'0';
+            printf("  %d",p);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("\n");
+   
+    triqui(A,p);
+   
+}
+
+void triqui(char A[3][3],int p,char t)
+{
+    int r=0;
+    int pox[8];
+    int j=0;
+    int s=0;
+        while(r != 1){
+
+            printf("Digite el dato: ");
+            scanf("%s",&t);
+            printf("Digite la posicion: ");
+            scanf("%d",&p);
+       
+            for(int i=0;i<9;i++){
+                if(pox[i]==p){
+                    printf("\n");
+                    printf("Esa posicion ya esta ocupada \n");
+                    printf("Digite el dato: ");
+                    scanf("%s",&t);
+                    printf("Digite la posicion: ");
+                    scanf("%d",&p);
+                }
+            }
+           
+            if(p == 1){
+                pox[0]=p;
+                A[0][0]=t;
+                j++;
+            }
+            if(p == 2){
+                pox[1]=p;
+                A[0][1]=t;
+                j++;
+            }
+            if(p == 3){
+                pox[2]=p;
+                A[0][2]=t;
+                j++;
+            }
+           
+            if(p == 4){
+                pox[3]=p;
+                A[1][0]=t;
+                j++;
+            }
+            if(p == 5){
+                pox[4]=p;
+                A[1][1]=t;
+                j++;
+            }
+            if(p == 6){
+                pox[5]=p;
+                A[1][2]=t;
+                j++;
+            }
+           
+            if(p == 7){
+                pox[6]=p;
+                A[2][0]=t;
+                j++;
+            }
+            if(p == 8){
+                pox[7]=p;
+                A[2][1]=t;
+                j++;
+            }
+            if(p == 9){
+                pox[8]=p;
+                A[2][2]=t;
+                j++;
+            }
+     
+            if(j == 9){
+                r=1;
+                s=2;
+            }
+           
+           
+            for (int i = 0; i < 3; i++){
+                for(int j = 0; j < 3; j++){
+                    printf("  %c",A[i][j]);
+                }
+                printf("\n");
+            }
+            printf("\n");
+            printf("\n");
+           
+           
+           
+           
+           
+            if(A[0][0] == 'x' && A[0][1] == 'x' && A[0][2] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[1][0] == 'x' && A[1][1] == 'x' && A[1][2] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[2][0] == 'x' && A[2][1] == 'x' && A[2][2] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[0][0] == 'o' && A[0][1] == 'o' && A[0][2] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+            if(A[1][0] == 'o' && A[1][1] == 'o' && A[1][2] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+            if(A[2][0] == 'o' && A[2][1] == 'o' && A[2][2] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+           
+           
+            if(A[0][0] == 'o' && A[1][0] == 'o' && A[2][0] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+            if(A[0][1] == 'o' && A[1][1] == 'o' && A[2][1] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+            if(A[0][2] == 'o' && A[1][2] == 'o' && A[2][2] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+            if(A[0][0] == 'x' && A[1][0] == 'x' && A[2][0] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[0][1] == 'x' && A[1][1] == 'x' && A[2][1] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[0][2] == 'x' && A[1][2] == 'x' && A[2][2] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+           
+           
+            if(A[0][0] == 'x' && A[1][1] == 'x' && A[2][2] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[0][2] == 'x' && A[1][1] == 'x' && A[2][0] == 'x'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador x");
+                r=1;
+            }
+            if(A[0][0] == 'o' && A[1][1] == 'o' && A[2][2] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+            if(A[0][2] == 'o' && A[1][1] == 'o' && A[2][0] == 'o'){
+                printf("******  ****  *   ****   *   *  *   \n");
+                printf("  *     *  *  *  *    *  *   *  *    \n");
+                printf("  *     ****  *  * *  *  *   *  *      \n");
+                printf("  *     * *   *  *  * *  *   *  *   \n");
+                printf("  *     *  *  *   ****    ***   *   \n");
+                printf("                      *      \n ");
+                printf("El ganador es el jugador o");
+                r=1;
+            }
+        }
+        if(s == 2){
+            printf("Fin de juego \n");
+            printf("Empate, para seguir jugando oprima Run otra vez. \n");
+        }
+    }
+
+
+
+int main()
+{
+    int p = 0;
+    char t ='0';
+   
+    char A[3][3];
+   
+    printf("************************************ Bienvenidos ************************************ \n");
+    printf("\n");
+    printf("******  ****  *****  *****       *****   **    *       *      *  **    *  *****      *          \n");
+    printf("  *     *  *  *      *           *       * *   *       *      *  * *   *  *         * *     \n");
+    printf("  *     ****  ***    *****       ***     *  *  *       *      *  *  *  *  ***      *****          \n");
+    printf("  *     * *   *          *       *       *   * *       *      *  *   * *  *       *     *  \n");
+    printf("  *     *  *  ****   *****       *****   *    **       *****  *  *    **  *****  *       *      \n");
+    printf("\n");
+    printf("Que la suerte te acompañe en estos juegos del hambre. xoxo ");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+   
+    plantilla(A,p);
+   
+}
