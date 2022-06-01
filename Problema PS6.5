@@ -1,0 +1,61 @@
+#include <stdio.h>
+main ()
+{
+    int A[100][100];
+    int B[100][100];
+    int C[100][100];
+    int m = 0;
+    int n = 0;
+    int p = 0;
+    
+    printf ("Numero de casillas A[i],B[i]: ");
+    scanf ("%d", &m);
+    printf ("Numero de casillas A[j],B[j]: ");
+    scanf ("%d", &n);
+    
+
+    A[m][n];
+    B[m][n];
+    C[m][n];
+    
+    printf ("Numeros de A \n");
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            p++;
+            printf ("Ingrese el dato %d:",p);
+            scanf ("%d", &A[i][j]);
+        }
+    }
+    p=0;
+    printf ("Numeros de B \n");
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            p++;
+            printf ("Ingrese el dato %d:",p);
+            scanf ("%d", &B[i][j]);
+        }
+    }
+    
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            C[i][j]=A[i][j] * B[i][j];
+        }
+    }
+    
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf (" %d  ",C[j][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
