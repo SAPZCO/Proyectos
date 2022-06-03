@@ -1,0 +1,49 @@
+#include <string.h>
+#include <stdio.h>
+
+int main ()
+{
+  char A[] ="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+  char Ax[]="abcdefghijklmnopqrstuvwxyz";
+  char B[100];
+  char D[100];
+  int g = 0;
+  int m = 1;
+ 
+  printf ("Digite la oracion: \n");
+  gets (B);
+  g = strlen (B);
+  printf ("Digite el nuemro:");
+  scanf("%d",&m);
+  for (int i = 0; i <= g; i++)
+    {
+      D[i] = B[i];
+    }
+  printf ("\n");
+  printf ("%s", B);
+  printf ("\n");
+  printf ("%s", Ax);
+  printf ("\n");
+
+  char W[g-1];
+  int p = 0;
+  int i = 0;
+   
+    while(p != g){
+    i=0;
+        for (i = 0; i <= 97; i++)
+        {
+            if (D[p] == A[i])
+            {
+                W[p] = A[i + m];
+                p++;
+            }
+            if (D[p] ==' ')
+            {
+                W[p] = ' ';
+                p++;
+            }
+        }
+    }
+    printf ("%s", W);
+}
